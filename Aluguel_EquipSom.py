@@ -159,11 +159,8 @@ def Login_Efetuado():
 # Frame que troca a parte de baixo da tela ao clicar nos botões, fiz para não ter que ficar criando várias janelas diferentes conforme eu vou clicando nos botões.
     frame_troca_tela = tk.Frame(gerenciamento)
     frame_troca_tela.pack(fill=tk.BOTH, expand=True)
-    
-# Faz com que a janela relatorio seja aberta quando o botão "relatório" é pressionado (Talvez eu remova no futuro)
-    def ir_relatorio():
-        abrir_relatorio()  # Abre a janela do relatorio
-    
+
+
 # Nome autoexplicativo, é uma função que mostra o estoque quando você clicar no botão "estoque"
     def mostrar_estoque():
         for widget in frame_troca_tela.winfo_children():
@@ -323,20 +320,6 @@ def Login_Efetuado():
     remover_button = tk.Button(frame1, text="Remover", width=10, bg="#7AC6C0", relief="flat", command=mostrar_remover)
     remover_button.pack(side="left", pady=5, padx=5)
 
-    relatorio_button = tk.Button(frame1, text="Relatório", width=10, bg="#7AC6C0", relief="flat", command=ir_relatorio)
-    relatorio_button.pack(side="left", pady=5, padx=5)
-
-# Após a função ir_relatorio ser acionada, está função abre uma nova janela chamada relatório
-def abrir_relatorio ():
-    relatorio = tk.Tk()
-    relatorio.title("Página de Relatório - Aluguel Genérico")
-    width = 500
-    height = 300
-    screen_width = relatorio.winfo_screenwidth()
-    screen_height = relatorio.winfo_screenheight()
-    x = int((screen_width / 2) - (width / 2))
-    y = int((screen_height / 2) - (height / 2))
-    relatorio.geometry(f"{width}x{height}+{x}+{y}")
 
 def abrir_cadastrar ():
     cadastro = tk.Tk()
